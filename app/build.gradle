@@ -1,18 +1,21 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.neenbedankt.android-apt'
 
+def retrofitVersion = "2.3.0"
+def okhttpVersion = "3.8.0"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     defaultConfig {
         applicationId "com.luying.lukotlindemo"
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner  rootProject.ext.dependencies["androidJUnitRunner"]
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -29,10 +32,20 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support:support-vector-drawable:25.3.1'
-    testCompile 'junit:junit:4.12'
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["vector-drawable"]
+    testCompile rootProject.ext.dependencies["junit"]
+
+    compile rootProject.ext.dependencies["dagger2"]
+    apt rootProject.ext.dependencies["dagger2-compiler"]
+    compile rootProject.ext.dependencies["javax.annotation"]
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile rootProject.ext.dependencies["okhttp3-interceptor"]
+
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofit-adapter-rxjava"]
+    compile rootProject.ext.dependencies["retrofit-converter-gson"]
 }
 repositories {
     mavenCentral()
