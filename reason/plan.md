@@ -3,11 +3,13 @@
 <p>主界面搭建</p></br>
 
 <p>5.31</p>
-<p>编写项目架构</p></br>
+<p>导入要用的插件以及框架相关的依赖</p>
+<p>架构设计</p>
+</br>
 
 <p>6.1</p>
-<p>将build.gradle里面各配置和框架版本抽取出来使用config.gradle文件统一编写</p><br>
-<p>使用Subcomponent代替depends进行隐式依赖不用显式，避免暴露父depends的方法写法减少代码</p>
+<p>将build.gradle里面各配置和框架版本抽取出来使用config.gradle文件统一编写</p>
+<p>使用Subcomponent代替depends进行隐式依赖不用显式，避免暴露父depends的方法写法减少代码</p></br>
 
 <p>6.2</p>
 <p>分析dagger2官方推荐的初始化p层和常规写法的结构优劣和代码量多少进行比较<p>
