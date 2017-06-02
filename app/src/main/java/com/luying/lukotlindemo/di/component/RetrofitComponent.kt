@@ -10,6 +10,9 @@ import dagger.Component
  */
 @Component(modules = arrayOf(RetrofitModule::class))
 interface RetrofitComponent {
+    //application里面初始化
     fun inject(app: App)
+
+//    fun plus():
 
 }

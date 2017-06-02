@@ -2,7 +2,9 @@ package com.luying.lukotlindemo.entity
 
 
 /**
- * Created by wing on 11/23/16.
+ * 创建人：luying
+ * 创建时间：2017/6/1
+ * 类说明：
  */
 data class FuckGoods(
         val _id: String,
