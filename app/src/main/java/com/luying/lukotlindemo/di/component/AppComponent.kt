@@ -10,7 +10,7 @@ import dagger.Component
  * 类说明：
  */
 @Component(modules = arrayOf(AppModule::class))
-public interface AppComponent {
+ interface AppComponent {
     //向下层提供context对象
     fun proContext() : Context
 }
